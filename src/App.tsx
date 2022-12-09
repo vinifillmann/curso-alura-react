@@ -18,6 +18,7 @@ function App() {
         >
           Learn React
         </a>
+        <p>Dale Gurizao</p>
       </header>
     </div>
   );
