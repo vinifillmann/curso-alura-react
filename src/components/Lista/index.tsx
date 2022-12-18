@@ -1,32 +1,15 @@
+import TarefaInterface from "../../interfaces/TarefaInterface"
+import Item from "./item"
 import style from "./Lista.module.scss"
 
-function Lista() {
-    const tarefas = [{
-        tarefa: "React",
-        tempo: "02:00:00"
-    },
-    {
-        tarefa: "JavaScript",
-        tempo: "01:00:00"
-    },
-    {
-        tarefa: "Python",
-        tempo: "00:30:00"
-    }
-    ]
+function Lista({ tarefas }: {tarefas: TarefaInterface[]}) {
+    
     return (
         <aside className={style.listaTarefas}>
             <h2>Estudos do dia</h2>
             <ul>
                 {tarefas.map((tarefa, index) => (
-                    <li key={index} className={style.item}>
-                        <h3>
-                            {tarefa.tarefa}
-                        </h3>
-                        <span>
-                            {tarefa.tempo}
-                        </span>
-                    </li>
+                    <Item key={index} {...tarefa} />
                 ))}
             </ul>
         </aside>
